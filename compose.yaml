@@ -1,0 +1,12 @@
+services:
+  ghidra:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ghidra-inline:local
+    user: "${GHIDRA_UID:-1000}:${GHIDRA_GID:-1000}"
+    ports:
+      - "127.0.0.1:8089:8089"
+    volumes:
+      - "${GHIDRA_PROJECTS_DIR:-./projects}:/projects"
+    stop_grace_period: 120s
