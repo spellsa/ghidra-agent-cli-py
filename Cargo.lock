@@ -193,7 +193,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ghidra-cli"
+name = "ghidra-agent-cli-py"
 version = "0.4.3"
 dependencies = [
  "anyhow",

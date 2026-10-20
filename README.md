@@ -1,8 +1,8 @@
-# Ghidra Python inline CLI
+# ghidra-agent-cli-py
 
 A small shell interface to resident Ghidra for AI agents. Send Python on stdin, batch related analysis in one execution, and pipe selected output into ordinary tools such as `rg`.
 
-This is a substantial fork of [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli), modified on 2026-10-20. It replaces the original command collection and Java bridge with a Rust frontend and a resident PyGhidra backend. The original command-line interface is not compatible with this fork.
+Originally derived from [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli), this project was substantially rewritten on 2026-10-20. It replaces the original command collection and Java bridge with a Rust frontend and a resident PyGhidra backend. The original command-line interface is not compatible with this fork.
 
 **Agent contract:** [docs/AI_REFERENCE.md](docs/AI_REFERENCE.md). It contains every CLI argument, helper signature, return shape, and execution rule.
 
@@ -87,6 +87,10 @@ The smoke test requires Bash, Docker, Rust, Python 3.10+, ripgrep (`rg`), and a 
 
 The Rust frontend is `src/inline_main.rs`; the Python service, project workers, and helpers are under `python/ghidra_inline/`. One worker process owns each open project and its JVM. Run the backend locally or in a container and connect from your agent environment.
 
-## License and origin
+## Acknowledgments and license
 
-[GPL-3.0](LICENSE), continuing the upstream project's license. Original project by Alexander Kiselev: [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli). Upstream implementation history remains in Git. Ghidra and the container base images retain their respective licenses; the Docker build downloads the official Ghidra archive and verifies its SHA256.
+This project began as a fork of [akiselev/ghidra-cli](https://github.com/akiselev/ghidra-cli), created by Alexander Kiselev. It has since evolved into an independent tool centered on Python inline execution, a resident PyGhidra backend, and concurrent use by AI agents.
+
+We thank Alexander Kiselev and the upstream contributors for providing the starting point for this project. The original Git history is preserved, and this project continues under the GPL-3.0 license.
+
+See [LICENSE](LICENSE). Ghidra and the container base images retain their respective licenses; the Docker build downloads the official Ghidra archive and verifies its SHA256.

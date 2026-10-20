@@ -1,11 +1,11 @@
 [package]
-name = "ghidra-cli"
+name = "ghidra-agent-cli-py"
 version = "0.4.3"
 edition = "2021"
 authors = ["Alexander Kiselev"]
 description = "Python inline CLI for resident Ghidra and parallel agents"
 license = "GPL-3.0"
-repository = "https://github.com/spellsa/ghidra-cli"
+repository = "https://github.com/spellsa/ghidra-agent-cli-py"
 
 [dependencies]
 anyhow = "1.0"
